@@ -1,3 +1,5 @@
+#PyBank
+
 import os
 import csv
 
@@ -89,7 +91,8 @@ with open(budget_data_csv, "r") as csvfile:
     
     # print(f"Total Months: {analysis["Months"]}") print from dictionary
     
-    # Store each of these in a dictionary and then call the dictionary to print to terminal and write to file
+    # Store each of these in a dictionary and then call the dictionary to print to terminal and write to file (maybe)
+    # Do I need to include the header and line breaks like in the example? Is there an easy way to do the line breaks?
     print(f"Total Months: {row_count}")
     print(f"Total: ${total_profit_loss}")
     # print(monthly_change)
@@ -98,9 +101,9 @@ with open(budget_data_csv, "r") as csvfile:
     print(f"Greatest Decrease in Profits: {month_name_difference[min_index]} (${min(monthly_change)})") # confirm this is correct  
 
 # write to file
-output_file = os.path.join(folder_path, "Resources", "budget_summary.txt")
+output_file = os.path.join(folder_path, "analysis", "budget_summary.txt")
 
-with open(output_file, "w") as datafile:
+with open(output_file, "w") as datafile: # https://www.pythontutorial.net/python-basics/python-write-text-file/, referenced for how to write to txt file
     datafile.write(f"Total Months: {row_count}")
     datafile.write("\n")
     datafile.write(f"Total: ${total_profit_loss}")
