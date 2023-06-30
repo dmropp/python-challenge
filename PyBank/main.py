@@ -98,3 +98,17 @@ with open(budget_data_csv, "r") as csvfile:
     print(f"Greatest Decrease in Profits: {month_name_difference[min_index]} (${min(monthly_change)})") # confirm this is correct  
 
 # write to file
+output_file = os.path.join(folder_path, "Resources", "budget_summary.txt")
+
+with open(output_file, "w") as datafile:
+    datafile.write(f"Total Months: {row_count}")
+    datafile.write("\n")
+    datafile.write(f"Total: ${total_profit_loss}")
+    datafile.write("\n")
+    datafile.write(f"Average Change: ${round(avg_change, 2)}")
+    datafile.write("\n")
+    datafile.write(f"Greatest Increase in Profits: {month_name_difference[max_index]} (${max(monthly_change)})")
+    datafile.write("\n")
+    datafile.write(f"Greatest Decrease in Profits: {month_name_difference[min_index]} (${min(monthly_change)})")
+
+        
